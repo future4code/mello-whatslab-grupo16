@@ -54,7 +54,7 @@ class Mensagem extends React.Component {
 
   const listaDeMensagens = this.state.mensagens.map((mensagem) => {
     return(
-      <p>{mensagem.usuario}</p> <p>{mensagem.texto}</p>
+      <p>{mensagem.usuario} {mensagem.texto}</p>
       );
     });
 
