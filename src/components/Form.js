@@ -77,6 +77,12 @@ class Mensagem extends React.Component {
             value={this.state.valorInputMensagem}
             onChange={this.onChangeMensagem}
             placeholder={"Mensagem"}
+            onKeyPress={event => {
+              if(event.key === 'Enter'){
+                this.enviaMensagem()
+                }
+              }
+            }
             />
             <button onClick={this.enviaMensagem}>Enviar</button>
           </DivForm>
