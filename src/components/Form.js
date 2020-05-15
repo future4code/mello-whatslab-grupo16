@@ -2,10 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 
 const InputTexto = styled.input`
-width: 380px;
+width: 100%;
 `
 const ContainerConversa = styled.div`
 margin-left: 10px;
+`
+const DivForm = styled.div`
+display: flex;
+width: 600px;
 `
 
 class Mensagem extends React.Component {
@@ -54,7 +58,7 @@ class Mensagem extends React.Component {
 
   const listaDeMensagens = this.state.mensagens.map((mensagem) => {
     return(
-      <p>{mensagem.usuario} {mensagem.texto}</p>
+      <p><b>{mensagem.usuario}</b> {mensagem.texto}</p>
       );
     });
 
@@ -63,7 +67,7 @@ class Mensagem extends React.Component {
     return(
         <div>
             <ContainerConversa>{listaDeMensagens}</ContainerConversa>
-
+          <DivForm>
             <input
             value={this.state.valorInputUsuario}
             onChange={this.onChangeUsuario}
@@ -75,6 +79,7 @@ class Mensagem extends React.Component {
             placeholder={"Mensagem"}
             />
             <button onClick={this.enviaMensagem}>Enviar</button>
+          </DivForm>
         </div>
     );
   }
